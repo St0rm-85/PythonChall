@@ -24,9 +24,17 @@ Secret = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. b
 result = ""
 
 for i in Secret:
-    if i != "" or i != "." or i != "(" or i != ")" or i != "'":
+    if i == "" or i == "." or i == "(" or i == ")" or i == "'":
+        #result += i
+        continue
+    else:
         for i1 in bang_chu_cai:
             if i == i1:
-                print(bang_chu_cai.index(i1))
+                index_change = bang_chu_cai.index(i1) + 2;
+                if index_change >= 25:
+                    index_change = index_change - 25
+                result = result + bang_chu_cai[index_change]
 
+
+print(result)
 
